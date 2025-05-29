@@ -12,21 +12,21 @@ public class FlipperController : MonoBehaviour
         // Controla o flipper esquerdo (A ou seta esquerda)
         if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
         {
-            SetMotor(leftFlipper, motorSpeed);
+            SetMotor(leftFlipper, -motorSpeed);
         }
         else
         {
-            SetMotor(leftFlipper, -motorSpeed);
+            SetMotor(leftFlipper, motorSpeed);
         }
 
         // Controla o flipper direito (D ou seta direita)
         if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
         {
-            SetMotor(rightFlipper, -motorSpeed);
+            SetMotor(rightFlipper, motorSpeed);
         }
         else
         {
-            SetMotor(rightFlipper, motorSpeed);
+            SetMotor(rightFlipper, -motorSpeed);
         }
     }
 
