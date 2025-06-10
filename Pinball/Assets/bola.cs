@@ -4,10 +4,13 @@ public class bola : MonoBehaviour
 {
 
     public int pontuaçãoTotal;
+    Rigidbody2D rb;
+    float forçaImulso = 100f;
     
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody2D>();
+        rb.AddForce(Vector2.down * forçaImulso, ForceMode2D.Impulse);
     }
 
     // Update is called once per frame
@@ -21,9 +24,9 @@ public class bola : MonoBehaviour
         if(other.collider.CompareTag("chão"))
         {
             Destroy(gameObject);
-            Debug.Log("aaaaaaaaaaaaaaaaaaaaaaaaa");
+            Debug.Log("Aperte R para reiniciar!!!!");
         }
-        Debug.Log("bateuuu");
+
     }
 
     void OnTriggerEnter2D(Collider2D colisao)
